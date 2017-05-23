@@ -27,3 +27,8 @@ std::vector<int> BigIntegerUtil::convertNumberToElements(int number)
     }
     return result;
 }
+
+std::vector<int> BigIntegerUtil::add(std::vector<int> &v1, std::vector<int> &v2)
+{
+
+}

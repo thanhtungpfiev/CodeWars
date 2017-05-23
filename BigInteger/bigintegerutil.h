@@ -21,6 +21,7 @@ public:
 
 public:
     static std::vector<int> convertNumberToElements(int number);
+    static std::vector<int> add(std::vector<int> &v1, std::vector<int> &v2);
 };
 
 #endif // BIGINTEGERUTIL_H
