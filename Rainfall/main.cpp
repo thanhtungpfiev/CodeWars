@@ -15,25 +15,25 @@
 
 using namespace std;
 
-static std::vector<std::string> split(const std::string &s, char delim)
+static std::vector<std::string> split(const std::string &s, const char &delim)
 {
     std::stringstream test(s);
     std::string segment;
     std::vector<std::string> seglist;
 
-    while(std::getline(test, segment, delim))
-    {
+    while (std::getline(test, segment, delim)) {
         seglist.push_back(segment);
     }
     return seglist;
 }
 
-static double stringToDouble( const std::string& s)
+static double stringToDouble(const std::string& s)
 {
     std::istringstream i(s);
     double x;
-    if (!(i >> x))
+    if (!(i >> x)) {
         return -1;
+    }
     return x;
 }
 
