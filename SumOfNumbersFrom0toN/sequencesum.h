@@ -11,11 +11,19 @@
 #ifndef SEQUENCESUM_H
 #define SEQUENCESUM_H
 
+#include <string>
 
 class SequenceSum
 {
 public:
     SequenceSum();
+    SequenceSum (int);
+
+public:
+    std::string showSequence();
+
+private:
+    int count;
 };
 
 #endif // SEQUENCESUM_H
