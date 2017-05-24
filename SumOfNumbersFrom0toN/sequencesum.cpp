@@ -10,6 +10,8 @@
  */
 #include "sequencesum.h"
 
+#include <sstream>
+
 SequenceSum::SequenceSum()
 {
 
@@ -22,25 +24,19 @@ SequenceSum::SequenceSum(int c)
 
 std::string SequenceSum::showSequence()
 {
-    int sum = 0;
-    std::string result;
+    std::stringstream ss;
     if (count == 0) {
-        result = std::to_string(count) + "=" + std::to_string(count);
-        return result;
+        ss << std::to_string(count) << "=" << std::to_string(count);
+        return ss.str();
     }
     if (count < 0) {
-        result = std::to_string(count) + "<0";
-        return result;
+        ss << std::to_string(count) << "<0";
+        return ss.str();
     }
-    for (int i = 0; i <= count; i++) {
-        sum += i;
-        if (i == count) {
-            result += std::to_string(i);
-        } else {
-            result += std::to_string(i) + "+";
-        }
+    ss << "0";
+    for (int i = 1; i <= count; i++) {
+        ss << "+" << i;
     }
-    result += " = ";
-    result += std::to_string(sum);
-    return result;
+    ss << " = " << std::to_string(count * (count + 1) / 2);
+    return ss.str();
 }
