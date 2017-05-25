@@ -10,6 +10,8 @@
  */
 #include "asum.h"
 
+#include <cmath>
+
 ASum::ASum()
 {
 
@@ -17,11 +19,9 @@ ASum::ASum()
 
 long long ASum::findNb(long long m)
 {
-    long long n = 1;
-    long long sum = 0;
-    while (sum < m) {
-        sum += n * n * n;
-        ++n;
+    long long sumN = std::sqrt(m);
+    if ((sumN * sumN) != m) {
+        return -1;
     }
-    return (sum == m ? --n : -1);
+    return (std::sqrt(8 * sumN + 1) - 1) / 2;
 }
