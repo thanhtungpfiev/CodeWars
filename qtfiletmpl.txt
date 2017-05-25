@@ -1,0 +1,10 @@
+/**
+ * \author %USER% thanhtungpfiev@gmail.com
+ *
+ * \date %MONTH%/%DAY%/%YEAR%
+ * \class %CLASS%
+ *
+ * \brief
+ *
+ *
+ */ 

@@ -16,6 +16,9 @@ class BankerPlan
 {
 public:
     BankerPlan();
+
+public:
+    static bool fortune(int f0, double p, int c0, int n, double i);
 };
 
 #endif // BANKERPLAN_H
