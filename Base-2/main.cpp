@@ -16,8 +16,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    cout << "Hello World!" << endl;
     cout << Negabinary::ToNegabinary(0) << endl;
-    cout << Negabinary::ToInt("1") << endl;
+    cout << Negabinary::ToInt("10110") << endl;
     return 0;
 }

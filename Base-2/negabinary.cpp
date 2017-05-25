@@ -52,12 +52,9 @@ int Negabinary::ToInt(std::string s)
     for (int i = s.length() - 1; i >= 0; i--) {
         atoms.push_back(s.at(i) - '0');
     }
-    if (atoms.size() == 1) {
-        return atoms.at(atoms.size() - 1) * (-2);
-    }
-    int result = atoms.at(atoms.size() - 1) * (-2) + atoms.at(atoms.size() - 2);
-    for (int i = atoms.size() - 2; i > 0; i--) {
-        result = result * (-2) + atoms.at(i - 1);
+    int result = 0;
+    for (int i = atoms.size() - 1; i >= 0; i--) {
+        result = result * (-2) + atoms.at(i);
     }
     return result;
 }
