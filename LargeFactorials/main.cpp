@@ -14,6 +14,8 @@
 
 using namespace std;
 
+const int BASE = 10;
+
 vector<int> convertNumberToElements(int number)
 {
     vector<int> result;
@@ -38,8 +40,8 @@ vector<int> add(vector<int> &v1, vector<int> &v2)
     int temp = 0;
     for (unsigned int i = 0; i < v1.size(); ++i) {
         temp = v1.at(i) + v2.at(i) + extra;
-        result.push_back(temp % 10);
-        extra = temp / 10;
+        result.push_back(temp % BASE);
+        extra = temp / BASE;
     }
     if (extra) {
         result.push_back(extra);
@@ -57,8 +59,8 @@ vector<int> mul(vector<int> &v1, vector<int> &v2)
         int temp = 0;
         for (int j = v2.size() - 1; j >= 0; --j) {
             temp = v2.at(j) * v1.at(i) + extra;
-            temp_v.push_back(temp % 10);
-            extra = temp / 10;
+            temp_v.push_back(temp % BASE);
+            extra = temp / BASE;
         }
         if (extra > 0) {
             temp_v.push_back(extra);
@@ -93,6 +95,14 @@ string factorial(int factorial)
 
 int main(int argc, char *argv[])
 {
+//    Assert::That(factorial(1), Equals("1"));
+//    Assert::That(factorial(5), Equals("120"));
+//    Assert::That(factorial(9), Equals("362880"));
+//    Assert::That(factorial(15), Equals("1307674368000"));
+    cout << factorial(1) << endl;
+    cout << factorial(5) << endl;
+    cout << factorial(9) << endl;
     cout << factorial(15) << endl;
+    cout << factorial(1000) << endl;
     return 0;
 }
