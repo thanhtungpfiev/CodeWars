@@ -14,8 +14,6 @@
 #include <iostream>
 #include <sstream>
 
-std::map<char, int> Rank::dictionary;
-
 Rank::Rank()
 {
 
@@ -30,11 +28,13 @@ std::string Rank::nthRank(const std::string &st, std::vector<int> &we, int n)
     } else if (listString.size() < (unsigned int)n) {
         result = "Not enough participants";
     } else {
-        genDictionary();
         std::vector<std::pair<int, std::string>> v;
         for (unsigned int i = 0; i < listString.size(); ++i) {
-            number(listString[i]);
-            v.emplace_back(-(number(listString[i]) * we[i]), listString[i]);
+            int number = listString[i].length();
+            for (const auto &c : listString[i]) {
+                number += toupper(c) - 64;
+            }
+            v.emplace_back(-number * we[i], listString[i]);
         }
         std::nth_element(v.begin(), v.begin() + n - 1, v.end());
         result = v[n - 1].second;
@@ -51,25 +51,4 @@ std::vector<std::string> Rank::splitGen(const std::string &s, char delim)
         out.push_back(next);
     }
     return out;
-}
-
-void Rank::genDictionary()
-{
-    int n = 1;
-    for (char c = 'a'; c <= 'z'; c++) {
-        dictionary.insert(std::pair<char,int>(c, n++));
-    }
-    n = 1;
-    for (char c = 'A'; c <= 'Z'; c++) {
-        dictionary.insert(std::pair<char,int>(c, n++));
-    }
-}
-
-int Rank::number(const std::string &s)
-{
-    int n = s.length();
-    for (const auto &c : s) {
-        n += dictionary[c];
-    }
-    return n;
 }

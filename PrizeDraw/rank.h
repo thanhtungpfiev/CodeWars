@@ -25,11 +25,7 @@ public:
 
 private:
     static std::vector<std::string> splitGen(const std::string &s, char delim);
-    static void genDictionary();
-    static int number(const std::string &s);
 
-private:
-    static std::map<char, int> dictionary;
 };
 
 #endif // RANK_H
