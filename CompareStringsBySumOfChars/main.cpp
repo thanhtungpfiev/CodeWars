@@ -21,6 +21,7 @@ long totalCharString(const std::string &str)
           sum += int(std::toupper(c));
       } else {
           sum = 0;
+          break;
       }
   }
   return sum;
