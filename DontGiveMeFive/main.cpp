@@ -28,5 +28,17 @@ int dontGiveMeFive(int start, int end)
 int main(int argc, char *argv[])
 {
     cout << dontGiveMeFive(1, 10) << endl;
+
+    /* Test case
+    Describe(dont_give_me_five_tests)
+    {
+      It(example_tests)
+      {
+        Assert::That(dontGiveMeFive(1, 9), Equals(8));
+        Assert::That(dontGiveMeFive(4, 17), Equals(12));
+      }
+    };
+    */
+
     return 0;
 }
