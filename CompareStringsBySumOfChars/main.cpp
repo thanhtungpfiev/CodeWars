@@ -35,5 +35,16 @@ bool compare(std::string s1, std::string s2)
 int main(int argc, char *argv[])
 {
     cout << compare("gf", "FG") << endl;
+
+    /* Test case
+    Describe(Tests)
+    {
+        It(ExampleTests)
+        {
+            Assert::That(compare("AD", "BC"), Equals(true));
+        }
+    };
+    */
+
     return 0;
 }
