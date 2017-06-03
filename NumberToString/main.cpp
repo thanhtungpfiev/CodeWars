@@ -35,5 +35,17 @@ int main(int argc, char *argv[])
 {
     cout << numberToString(2) << endl;
     cout << numberToString(-22) << endl;
+
+    /* Test case
+    Describe(number_to_string_test)
+    {
+        It(should_return_true)
+        {
+            Assert::That(numberToString(2), Equals("2"));
+            Assert::That(numberToString(-22), Equals("-22"));
+        }
+    };
+    */
+
     return 0;
 }
