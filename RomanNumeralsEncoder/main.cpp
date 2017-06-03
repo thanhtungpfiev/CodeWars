@@ -47,5 +47,18 @@ int main(int argc, char *argv[])
     cout << solution(182) << endl;
     cout << solution(1990) << endl;
     cout << solution(1875) << endl;
+
+    /* Test case
+    Describe(Kata)
+    {
+        It(Fixed_Test)
+        {
+        Assert::That(solution(182) , Equals("CLXXXII"));
+        Assert::That(solution(1990) , Equals("MCMXC"));
+        Assert::That(solution(1875) , Equals("MDCCCLXXV"));
+        }
+    };
+    */
+
     return 0;
 }
